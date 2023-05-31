@@ -11,7 +11,8 @@ function RegisterBox() {
 
 	const sendData = async () => {
 		let data = { name: username, pass: password }
-		const resposne = await fetch('http://localhost:5001/addUser', {method: "POST", body: JSON.stringify(data)})
+		console.log(data)
+		const resposne = await fetch('http://localhost:5001/addUser', {method: "POST",mode: "cors", headers: {"Content-Type": 'application/json'}, body: JSON.stringify(data)})
 		console.log(resposne)
   };
 
