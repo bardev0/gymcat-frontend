@@ -1,6 +1,15 @@
 lockfileVersion: "6.0"
 
 dependencies:
+  "@types/bcrypt":
+    specifier: ^5.0.0
+    version: 5.0.0
+  "@types/bcryptjs":
+    specifier: ^2.4.2
+    version: 2.4.2
+  bcryptjs:
+    specifier: ^2.4.3
+    version: 2.4.3
   react:
     specifier: ^18.2.0
     version: 18.2.0
@@ -768,12 +777,35 @@ packages:
       fastq: 1.15.0
     dev: true
 
+  /@types/bcrypt@5.0.0:
+    resolution:
+      {
+        integrity: sha512-agtcFKaruL8TmcvqbndlqHPSJgsolhf/qPWchFlgnW1gECTN/nKbFcoFnvKAQRFfKbh+BO6A3SWdJu9t+xF3Lw==,
+      }
+    dependencies:
+      "@types/node": 20.2.5
+    dev: false
+
+  /@types/bcryptjs@2.4.2:
+    resolution:
+      {
+        integrity: sha512-LiMQ6EOPob/4yUL66SZzu6Yh77cbzJFYll+ZfaPiPPFswtIlA/Fs1MzdKYA7JApHU49zQTbJGX3PDmCpIdDBRQ==,
+      }
+    dev: false
+
   /@types/json-schema@7.0.12:
     resolution:
       {
         integrity: sha512-Hr5Jfhc9eYOQNPYO5WLDq/n4jqijdHNlDXjuAQkkt+mWdQR+XJToOHrsD4cPaMXpn6KO7y2+wM8AZEs8VpBLVA==,
       }
     dev: true
+
+  /@types/node@20.2.5:
+    resolution:
+      {
+        integrity: sha512-JJulVEQXmiY9Px5axXHeYGLSjhkZEnD+MDPDGbCbIAbMslkKwmygtZFy1X6s/075Yo94sf8GuSlFfPzysQrWZQ==,
+      }
+    dev: false
 
   /@types/prop-types@15.7.5:
     resolution:
@@ -1069,6 +1101,13 @@ packages:
         integrity: sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==,
       }
     dev: true
+
+  /bcryptjs@2.4.3:
+    resolution:
+      {
+        integrity: sha512-V/Hy/X9Vt7f3BbPJEi8BdVFMByHi+jNXrYkW3huaybV/kQ0KJg0Y6PkEMbn+zeT+i+SiKZ/HMqJGIIt4LZDqNQ==,
+      }
+    dev: false
 
   /brace-expansion@1.1.11:
     resolution:
