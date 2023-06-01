@@ -1,11 +1,12 @@
 import { useState } from "react";
-import bcryptjs from "bcryptjs";
+
 
 
 function LoginBox() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 	const [loginError, setLoginError] = useState("")
+	const [passwordVisible, setPasswordVisible] = useState("password")
 
   const handleName = (e: any) => setUsername(e.target.value);
   const handlePassw = (e: any) => setPassword(e.target.value);
@@ -45,7 +46,7 @@ function LoginBox() {
           </form>
           <form>
             <label className="loginLabel">password :</label>
-            <input onChange={handlePassw} type="text"></input>
+            <input onChange={handlePassw} type={passwordVisible}></input>
           </form>
           <button onClick={sendData}>Login</button>
         </div>

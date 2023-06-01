@@ -4,7 +4,8 @@ import * as bcryptjs from "bcryptjs";
 function RegisterBox() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-
+	const [passwordVisible, setPasswordVisible] = useState("password")
+	
   const handleName = (e: any) => setUsername(e.target.value);
   const handlePassw = (e: any) => setPassword(e.target.value);
 
@@ -48,7 +49,7 @@ function RegisterBox() {
             <label className="registerLabel" id="regInpPass">
               password :
             </label>
-            <input onChange={handlePassw} type="text"></input>
+            <input onChange={handlePassw} type={passwordVisible}></input>
           </form>
           <button onClick={sendData}>Regiser</button>
         </div>
