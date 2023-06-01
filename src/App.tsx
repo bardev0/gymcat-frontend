@@ -2,7 +2,7 @@ import LoginBox from "./components/LoginBox";
 import RegisterBox from "./components/RegisterBox";
 import Header from "./components/Header";
 
-import "./App.css";
+import "./MainStyle.css";
 
 function App() {
   return (

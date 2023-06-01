@@ -4,8 +4,8 @@ import * as bcryptjs from "bcryptjs";
 function RegisterBox() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-	const [passwordVisible, setPasswordVisible] = useState("password")
-	
+  const [passwordVisible, setPasswordVisible] = useState("password");
+
   const handleName = (e: any) => setUsername(e.target.value);
   const handlePassw = (e: any) => setPassword(e.target.value);
 
