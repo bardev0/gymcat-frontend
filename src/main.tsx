@@ -1,10 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App.tsx";
 import "./index.css";
 import LandingPage from "./routes/LandingPage";
 import LoginPage from "./routes/LoginPage";
 import RegisterPage from "./routes/RegisterPage";
+import UserHomePage from "./routes/UserHomePage";
 
 import {
   createBrowserRouter,
@@ -14,7 +14,8 @@ import {
 const router = createBrowserRouter([
   { path: "/", element: <LandingPage /> },
   { path: "/login", element: <LoginPage /> },
-	{ path: "/register", element: <RegisterPage />}, 
+	{ path: "/register", element: <RegisterPage />},
+	{ path: "/home", element: <UserHomePage />},
 ]);
 
 
