@@ -10,13 +10,13 @@ function UserHomePage() {
   console.log(loged_status);
   console.log(usName);
 
-  // add
+  // add dashboard component
   return (
     <>
       <div>
-        <button>Logout</button>
         {loged_status ? (
           <div>
+            <button>Logout</button>
             <h1>Hello {usName}</h1>
           </div>
         ) : (

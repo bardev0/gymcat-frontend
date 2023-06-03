@@ -19,11 +19,6 @@ function LoginBox() {
     pass: password,
   };
 
-  function moveToUserHome(userStatus: string) {
-    if (userStatus == "logged in") {
-      navigate("/home");
-    }
-  }
   console.log(username + " " + password);
 
   const sendData = async () => {
