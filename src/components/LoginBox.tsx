@@ -1,38 +1,32 @@
 import { useState } from "react";
 import { useNavigate } from "../../node_modules/react-router-dom/dist/index";
-
+import useStore from "../Store";
 function LoginBox() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [loginError, setLoginError] = useState("");
   const [passwordVisible, setPasswordVisible] = useState("password");
-	
-	const navigate = useNavigate()
+  const setSUserName = useStore((state: any) => state.setUserName);
+  const setIsUserLogged = useStore((state: any) => state.setIsUserLogged);
+
+  const navigate = useNavigate();
 
   const handleName = (e: any) => setUsername(e.target.value);
   const handlePassw = (e: any) => setPassword(e.target.value);
-	
+
   let data = {
     name: username,
     pass: password,
   };
-	
-	function moveToUserHome(userStatus: string) {
-				if(userStatus == "logged in") {
-						navigate('/home')
-				}
-	}
 
-  // pass
-  //
+  function moveToUserHome(userStatus: string) {
+    if (userStatus == "logged in") {
+      navigate("/home");
+    }
+  }
   console.log(username + " " + password);
 
   const sendData = async () => {
-    // let satlR = 13
-    // let salt = await bcryptjs.genSalt(satlR)
-    // let hash = await bcryptjs.hash(password, salt)
-    // Object.assign(data, {pass: hash})
-    // console.log(data)
     const resposne = await fetch("http://localhost:5001/login", {
       method: "POST",
       mode: "cors",
@@ -40,9 +34,13 @@ function LoginBox() {
       body: JSON.stringify(data),
     });
     resposne.json().then((o) => {
-			moveToUserHome(o.loginStatus)
-      console.log(o);
-      setLoginError(o.loginStatus);
+      if (o.loginStatus == "logged in") {
+        setSUserName(username);
+        setIsUserLogged(true);
+        navigate("/home");
+      } else {
+        setLoginError(o.loginStatus);
+      }
     });
   };
 

@@ -14,10 +14,9 @@ import {
 const router = createBrowserRouter([
   { path: "/", element: <LandingPage /> },
   { path: "/login", element: <LoginPage /> },
-	{ path: "/register", element: <RegisterPage />},
-	{ path: "/home", element: <UserHomePage />},
+  { path: "/register", element: <RegisterPage /> },
+  { path: "/home", element: <UserHomePage /> },
 ]);
-
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
