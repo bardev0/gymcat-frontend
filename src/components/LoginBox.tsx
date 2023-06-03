@@ -1,18 +1,27 @@
 import { useState } from "react";
+import { useNavigate } from "../../node_modules/react-router-dom/dist/index";
 
 function LoginBox() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [loginError, setLoginError] = useState("");
   const [passwordVisible, setPasswordVisible] = useState("password");
+	
+	const navigate = useNavigate()
 
   const handleName = (e: any) => setUsername(e.target.value);
   const handlePassw = (e: any) => setPassword(e.target.value);
-
+	
   let data = {
     name: username,
     pass: password,
   };
+	
+	function moveToUserHome(userStatus: string) {
+				if(userStatus == "logged in") {
+						navigate('/home')
+				}
+	}
 
   // pass
   //
@@ -31,6 +40,7 @@ function LoginBox() {
       body: JSON.stringify(data),
     });
     resposne.json().then((o) => {
+			moveToUserHome(o.loginStatus)
       console.log(o);
       setLoginError(o.loginStatus);
     });
