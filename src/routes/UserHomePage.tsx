@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
+import SideBar from "../components/SideBar";
 import useStore from "../Store";
+import WorkoutsPage from "./WorkoutsPage";
 
 function UserHomePage() {
   const usName = useStore((state: any) => state.userName);
@@ -26,14 +28,15 @@ function UserHomePage() {
           <div>
             <button>Logout</button>
             <h1>Hello {usName}</h1>
-            <button onClick={() => console.log(userWorkouts)}>
-              Show Workouts
-            </button>
-            {userWorkouts.map((workout, idx: number) => (
-							<div>
-              <span>{workout.date} &nbsp;</span>
-							<span>{workout.totalDay}</span></div>
-            ))}
+							<SideBar />
+						<WorkoutsPage woks={userWorkouts}/>
+
+            {/* {userWorkouts.map((workout, idx: number) => (
+              <div>
+                <span>{workout.date} &nbsp;</span>
+                <span>{workout.totalDay}</span>
+              </div>
+            ))} */}
           </div>
         ) : (
           <h1>Login To Enter first!</h1>

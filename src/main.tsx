@@ -5,6 +5,7 @@ import LandingPage from "./routes/LandingPage";
 import LoginPage from "./routes/LoginPage";
 import RegisterPage from "./routes/RegisterPage";
 import UserHomePage from "./routes/UserHomePage";
+import ResetPassword from "./routes/ResetPassword";
 
 import {
   createBrowserRouter,
@@ -16,6 +17,7 @@ const router = createBrowserRouter([
   { path: "/login", element: <LoginPage /> },
   { path: "/register", element: <RegisterPage /> },
   { path: "/home", element: <UserHomePage /> },
+  { path: "/resetPassword", element: <ResetPassword /> },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
