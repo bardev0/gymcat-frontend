@@ -9,8 +9,9 @@ function UserHomePage() {
   const setWorkouts = useStore((state: any) => state.setUserWorkouts);
   const userWorkouts = useStore((state: any) => state.userWorkouts);
 
+	// move server path out of code
   useEffect(() => {
-    fetch("http://localhost:5001/testExport", { method: "get" })
+    fetch("http://191.96.225/testExport", { method: "get" })
       .then((response) => response.json())
       .then((wok) => {
         setWorkouts(wok);
