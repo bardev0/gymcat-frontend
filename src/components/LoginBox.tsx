@@ -22,7 +22,7 @@ function LoginBox() {
   console.log(username + " " + password);
 
   const sendData = async () => {
-    const resposne = await fetch("http://localhost:5001/login", {
+    const resposne = await fetch("http://191.96.53.225:3000/login", {
       method: "POST",
       mode: "cors",
       headers: { "Content-Type": "application/json" },
@@ -32,7 +32,7 @@ function LoginBox() {
       if (o.loginStatus == "logged in") {
         setSUserName(username);
         setIsUserLogged(true);
-        navigate("/home");
+        navigate("/gymcat/home");
       } else {
         setLoginError(o.loginStatus);
       }

@@ -11,9 +11,10 @@ function UserHomePage() {
 
 	// move server path out of code
   useEffect(() => {
-    fetch("http://191.96.225/testExport", { method: "get" })
+    fetch("http://191.96.53.225:3000/testExport", { method: "get", mode: "cors" })
       .then((response) => response.json())
       .then((wok) => {
+				console.log(wok)
         setWorkouts(wok);
       });
   }, []);
@@ -28,16 +29,15 @@ function UserHomePage() {
         {loged_status ? (
           <div>
             <button>Logout</button>
-            <h1>Hello {usName}</h1>
+            <h1>Hello again! {usName}</h1>
             <SideBar />
-            {/* <WorkoutsPage woks={userWorkouts} />
 
             {userWorkouts.map((workout, idx: number) => (
               <div>
                 <span>{workout.date} &nbsp;</span>
                 <span>{workout.totalDay}</span>
               </div>
-            ))} */}
+            ))}
           </div>
         ) : (
           <h1>Login To Enter first!</h1>
