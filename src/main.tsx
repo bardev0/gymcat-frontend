@@ -13,7 +13,7 @@ import {
 } from "../node_modules/react-router-dom/dist/index";
 
 const router = createBrowserRouter([
-  { path: "/", element: <LandingPage /> },
+  { path: "gymcat/", element: <LandingPage /> },
   { path: "/login", element: <LoginPage /> },
   { path: "/register", element: <RegisterPage /> },
   { path: "/home", element: <UserHomePage /> },
@@ -22,6 +22,6 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <RouterProvider router={router}></RouterProvider>
+		<RouterProvider router={router} fallbackElement={<LandingPage />}></RouterProvider>
   </React.StrictMode>
 );
