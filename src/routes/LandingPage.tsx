@@ -11,14 +11,14 @@ function LandingPage() {
         <Header></Header>
 
         <p>Enterteining Giberish</p>
-        <Link to="/login">
+        <Link to="/gymcat/login">
           <h3>Login</h3>
         </Link>
         <div>
-          <Link to="/register">
+          <Link to="/gymcat/register">
             <h3>Sign Up</h3>
           </Link>
-          <Link to="/resetPassword">
+          <Link to="/gymcat/resetPassword">
             <h5>Forgot Password</h5>
           </Link>
         </div>

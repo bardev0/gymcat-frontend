@@ -13,15 +13,15 @@ import {
 } from "../node_modules/react-router-dom/dist/index";
 
 const router = createBrowserRouter([
-  { path: "/", element: <LandingPage /> },
-  { path: "/login", element: <LoginPage /> },
-  { path: "/register", element: <RegisterPage /> },
-  { path: "/home", element: <UserHomePage /> },
-  { path: "/resetPassword", element: <ResetPassword /> },
+  { path: "/gymcat/", element: <LandingPage /> },
+  { path: "/gymcat/login/", element: <LoginPage /> },
+  { path: "/gymcat/register/", element: <RegisterPage /> },
+  { path: "/gymcat/home", element: <UserHomePage /> },
+  { path: "/gymcat/resetPassword", element: <ResetPassword /> },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <RouterProvider router={router}></RouterProvider>
+		<RouterProvider router={router} fallbackElement={<LandingPage />}></RouterProvider>
   </React.StrictMode>
 );
