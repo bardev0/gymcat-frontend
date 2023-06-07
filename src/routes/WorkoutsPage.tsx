@@ -2,13 +2,10 @@ import useStore from "../Store";
 
 // it could be either Page or element of Home
 function WorkoutsPage() {
-  
-const workouts = useStore((state: any) => 
-  state.userWorkouts
-);
+  const workouts = useStore((state: any) => state.userWorkouts);
 
-	// clicking the wok.date przenosi nas do konkretnego treningu z analiza itp
-	return (
+  // clicking the wok.date przenosi nas do konkretnego treningu z analiza itp
+  return (
     <>
       <div>
         {workouts.map((wok, idx: number) => (

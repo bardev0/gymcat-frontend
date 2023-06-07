@@ -4,25 +4,21 @@ import * as bcryptjs from "bcryptjs";
 function RegisterBox() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+	const [email, setEmail] = useState("")
   const [passwordVisible, setPasswordVisible] = useState("password");
 
   const handleName = (e: any) => setUsername(e.target.value);
   const handlePassw = (e: any) => setPassword(e.target.value);
-
+	const handleEmail = (e: any) => setEmail(e.target.value);
   console.log(username + " " + password);
 
   const sendData = async () => {
     let saltR = 13;
-    let data = { name: username };
+    let data = { name: username, email: email };
 
     let salt = await bcryptjs.genSalt(saltR);
     let hash = await bcryptjs.hash(password, salt);
-    //**
-    // bcryptjs.genSalt(saltR, (salt) =>
-    // bcryptjs.hash(password, salt, (hash) =>
-    // Object.assign(data, { password: hash })
-    // )
-    // );
+
     Object.assign(data, { password: hash });
     console.log(data);
     const resposne = await fetch("http://localhost:5001/addUser", {
@@ -50,6 +46,12 @@ function RegisterBox() {
               password :
             </label>
             <input onChange={handlePassw} type={passwordVisible}></input>
+          </form>
+          <form>
+            <label className="emailLabel" id="regInpEmail">
+              email:
+            </label>
+            <input onChange={handleEmail} type="text"></input>
           </form>
           <button onClick={sendData}>Regiser</button>
         </div>

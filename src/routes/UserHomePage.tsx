@@ -28,10 +28,10 @@ function UserHomePage() {
           <div>
             <button>Logout</button>
             <h1>Hello {usName}</h1>
-							<SideBar />
-						<WorkoutsPage woks={userWorkouts}/>
+            <SideBar />
+            {/* <WorkoutsPage woks={userWorkouts} />
 
-            {/* {userWorkouts.map((workout, idx: number) => (
+            {userWorkouts.map((workout, idx: number) => (
               <div>
                 <span>{workout.date} &nbsp;</span>
                 <span>{workout.totalDay}</span>

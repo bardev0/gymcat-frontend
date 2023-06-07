@@ -1,7 +1,10 @@
 function ResetPassword() {
   return (
     <>
-      <div></div>
+      <div>
+        <label>Enter email adress :</label>
+        <input type="text"></input>
+      </div>
     </>
   );
 }
