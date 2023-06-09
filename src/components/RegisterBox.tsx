@@ -4,12 +4,12 @@ import * as bcryptjs from "bcryptjs";
 function RegisterBox() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-	const [email, setEmail] = useState("")
+  const [email, setEmail] = useState("");
   const [passwordVisible, setPasswordVisible] = useState("password");
 
   const handleName = (e: any) => setUsername(e.target.value);
   const handlePassw = (e: any) => setPassword(e.target.value);
-	const handleEmail = (e: any) => setEmail(e.target.value);
+  const handleEmail = (e: any) => setEmail(e.target.value);
   console.log(username + " " + password);
 
   const sendData = async () => {
@@ -21,7 +21,10 @@ function RegisterBox() {
 
     Object.assign(data, { password: hash });
     console.log(data);
-    const resposne = await fetch("http://localhost:5001/addUser", {
+
+		const serverPath = "http://191.96.53.225:5001/addUser"
+		const localhostPath = "http://localhost:5001/addUser"
+    const resposne = await fetch(localhostPath, {
       method: "POST",
       mode: "cors",
       headers: { "Content-Type": "application/json" },

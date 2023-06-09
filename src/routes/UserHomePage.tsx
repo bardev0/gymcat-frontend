@@ -9,12 +9,15 @@ function UserHomePage() {
   const setWorkouts = useStore((state: any) => state.setUserWorkouts);
   const userWorkouts = useStore((state: any) => state.userWorkouts);
 
-	// move server path out of code
+  // move server path out of code
   useEffect(() => {
-    fetch("http://191.96.53.225:3000/testExport", { method: "get", mode: "cors" })
+    fetch("http://191.96.53.225:3000/testExport", {
+      method: "get",
+      mode: "cors",
+    })
       .then((response) => response.json())
       .then((wok) => {
-				console.log(wok)
+        console.log(wok);
         setWorkouts(wok);
       });
   }, []);
