@@ -1,6 +1,7 @@
 import { useState } from "react";
 import * as bcryptjs from "bcryptjs";
 
+import paths from "../utils";
 function RegisterBox() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -22,9 +23,7 @@ function RegisterBox() {
     Object.assign(data, { password: hash });
     console.log(data);
 
-		const serverPath = "http://191.96.53.225:3000/addUser"
-		const localhostPath = "http://localhost:5001/addUser"
-    const resposne = await fetch(localhostPath, {
+    const resposne = await fetch(paths.prodRegister, {
       method: "POST",
       mode: "cors",
       headers: { "Content-Type": "application/json" },

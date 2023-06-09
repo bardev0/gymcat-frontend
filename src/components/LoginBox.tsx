@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { useNavigate } from "../../node_modules/react-router-dom/dist/index";
 import useStore from "../Store";
+
+import paths from "../utils";
+
 function LoginBox() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -20,10 +23,6 @@ function LoginBox() {
   };
 
   console.log(username + " " + password);
-
-	const serverPath = "http://191.96.53.225:3000/login"
-	const localhostPath = "http://localhost:5001/login"
-	
 
   const sendData = async () => {
     const resposne = await fetch("http://191.96.53.225:3000/login", {
