@@ -37,8 +37,8 @@ function UserHomePage() {
 
             {userWorkouts.map((workout, idx: number) => (
               <div>
-                <span>{workout.date} &nbsp;</span>
-                <span>{workout.totalDay}</span>
+                <span>data : {workout.date} &nbsp;</span>
+                <span>total dnia : {workout.totalDay}</span>
               </div>
             ))}
           </div>
