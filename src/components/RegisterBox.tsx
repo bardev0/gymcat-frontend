@@ -6,6 +6,8 @@ function RegisterBox() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
+
+	// use special font to do password visivility icon
   const [passwordVisible, setPasswordVisible] = useState("password");
 
   const handleName = (e: any) => setUsername(e.target.value);
@@ -29,6 +31,15 @@ function RegisterBox() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
     });
+    // add logic to veryfi if :
+    // user already exists
+    // password is strong
+    // email is vali
+    //
+    // and add logic to communicate
+    // all of the above
+    // resitration complete -> move to sign in!
+
     console.log(resposne);
   };
 

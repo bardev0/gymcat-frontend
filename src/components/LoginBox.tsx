@@ -4,6 +4,7 @@ import useStore from "../Store";
 
 import paths from "../utils";
 
+// add logic that enters also logs user in
 function LoginBox() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
