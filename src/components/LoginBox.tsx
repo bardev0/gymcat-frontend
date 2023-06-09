@@ -21,6 +21,10 @@ function LoginBox() {
 
   console.log(username + " " + password);
 
+	const serverPath = "http://191.96.53.225:3000/login"
+	const localhostPath = "http://localhost:5001/login"
+	
+
   const sendData = async () => {
     const resposne = await fetch("http://191.96.53.225:3000/login", {
       method: "POST",

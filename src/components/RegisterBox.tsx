@@ -22,7 +22,7 @@ function RegisterBox() {
     Object.assign(data, { password: hash });
     console.log(data);
 
-		const serverPath = "http://191.96.53.225:5001/addUser"
+		const serverPath = "http://191.96.53.225:3000/addUser"
 		const localhostPath = "http://localhost:5001/addUser"
     const resposne = await fetch(localhostPath, {
       method: "POST",
