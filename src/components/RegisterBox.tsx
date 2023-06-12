@@ -7,7 +7,7 @@ function RegisterBox() {
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
 
-	// use special font to do password visivility icon
+  // use special font to do password visivility icon
   const [passwordVisible, setPasswordVisible] = useState("password");
 
   const handleName = (e: any) => setUsername(e.target.value);

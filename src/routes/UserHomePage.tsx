@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import SideBar from "../components/SideBar";
 import useStore from "../Store";
 import WorkoutsPage from "./WorkoutsPage";
-
+import WorkoutTableHead from "../components/WorkoutTableHead";
+import WorkoutTableBody from "../components/WorkoutTableBody";
 function UserHomePage() {
   const usName = useStore((state: any) => state.userName);
   const loged_status = useStore((state: any) => state.isUserLoggedIn);
@@ -34,6 +35,8 @@ function UserHomePage() {
             <button>Logout</button>
             <h1>Hello again! {usName}</h1>
             <SideBar />
+            <WorkoutTableHead />
+            <WorkoutTableBody />
 
             {userWorkouts.map((workout, idx: number) => (
               <div>
