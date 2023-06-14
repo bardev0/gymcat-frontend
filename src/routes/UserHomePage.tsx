@@ -1,9 +1,53 @@
 import { useEffect, useState } from "react";
 import SideBar from "../components/SideBar";
 import useStore from "../Store";
-import WorkoutsPage from "./WorkoutsPage";
-import WorkoutTableHead from "../components/WorkoutTableHead";
-import WorkoutTableBody from "../components/WorkoutTableBody";
+
+function EditTemplate() {
+  // const startingTemplate = useStore((state: any) => state.startingTemplate);
+  const [currentTemplate, setCurrentTemplate] = useState({});
+
+  let a = {
+    rows: 1,
+    series: 1,
+    rowsA: [1],
+    seriesA: [1],
+  };
+
+  let startingPoint = {
+    numberOfSeries: 1,
+    series: [
+      {
+        seriesNum: 1,
+        numberOfExer: 1,
+        exercies: [{ mg: "klatka", e: "benchpress" }],
+      },
+    ],
+  };
+
+  useEffect(() => {
+    setCurrentTemplate(startingPoint);
+    console.log(currentTemplate);
+  }, []);
+
+  console.log(currentTemplate);
+  return (
+    <>
+      <div>
+        {startingPoint.series.map((obj, idx) => (
+          <div>
+            <p>
+              Series # :{obj.seriesNum}
+              {obj.exercies.map((obj1, idx1) => (
+                <div>{obj1.mg} and {obj1.e}</div>
+              ))}
+            </p>
+          </div>
+        ))}
+      </div>
+    </>
+  );
+}
+
 function UserHomePage() {
   const usName = useStore((state: any) => state.userName);
   const loged_status = useStore((state: any) => state.isUserLoggedIn);
@@ -27,6 +71,7 @@ function UserHomePage() {
   console.log(usName);
 
   // add dashboard component
+
   return (
     <>
       <div>
@@ -35,9 +80,7 @@ function UserHomePage() {
             <button>Logout</button>
             <h1>Hello again! {usName}</h1>
             <SideBar />
-            <WorkoutTableHead />
-            <WorkoutTableBody />
-
+            <EditTemplate />
             {userWorkouts.map((workout, idx: number) => (
               <div>
                 <span>data : {workout.date} &nbsp;</span>
