@@ -15,6 +15,10 @@ const useStore = create((set) => ({
     set((state: any) => ({
       userWorkouts: (state.userWorkouts = workouts),
     })),
+  setTemplateArry: (arr: Array<any>) =>
+    set((state: any) => ({
+      startingTemplate: (state.startingTemplate = arr),
+    })),
 }));
 
 export default useStore;

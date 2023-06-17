@@ -1,8 +1,9 @@
 import { useState } from "react";
 import Row from "./Row";
+import useStore from "../Store";
 function Table() {
-  // remove erong template from store
-
+  const storeAry = useStore((state: any) => state.startingTemplate);
+  const setTemplateArry = useStore((state: any) => state.setTemplateArry);
   let [rowsNum, setRowsNum] = useState([1]);
   let workout = {
     exercisie: [
@@ -21,22 +22,34 @@ function Table() {
     ],
   };
 
+  // add check if is < 1
   const rowPlus = () => {
     let temp = [...rowsNum];
     let idx = temp.at(-1);
-    temp.push(idx! + 1);
+
+    if (isNaN(idx!)) {
+      temp.push(1);
+    } else {
+      temp.push(idx! + 1);
+    }
     setRowsNum(temp);
-    console.log(temp);
+    // console.log(temp);
+    setTemplateArry(temp);
+    console.log(storeAry);
   };
 
   const rowMinus = () => {
     let temp = [...rowsNum];
-    temp.pop();
+		if (temp.length > 1 )	{
+		temp.pop()
+		}
     setRowsNum(temp);
-    console.log(temp);
+    // console.log(temp);
+    setTemplateArry(temp);
+    console.log(storeAry);
   };
-	
-	
+
+  console.log(rowsNum);
 
   return (
     <>
@@ -46,7 +59,7 @@ function Table() {
         <button>Generate</button>
         <div className="rowBlock">
           {rowsNum.map((obj, idx) => (
-            <Row />
+            <Row numberOfRow={idx} />
           ))}
         </div>
       </div>
