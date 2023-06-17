@@ -4,12 +4,7 @@ const useStore = create((set) => ({
   userName: "",
   isUserLoggedIn: false,
   userWorkouts: [],
-  startingTemplate: {
-    series: 1,
-    rows: 1,
-    seriesA: [1],
-    rowsA: [1],
-  },
+  startingTemplate: [],
   setUserName: (name: string) =>
     set((state: any) => ({ userName: (state.userName = name) })),
   setIsUserLogged: (login_state: any) =>

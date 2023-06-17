@@ -1,52 +1,9 @@
 import { useEffect, useState } from "react";
 import SideBar from "../components/SideBar";
+import Table from "../components/Table";
+import "../MainStyle.css";
+
 import useStore from "../Store";
-
-function EditTemplate() {
-  // const startingTemplate = useStore((state: any) => state.startingTemplate);
-  const [currentTemplate, setCurrentTemplate] = useState({});
-
-  let a = {
-    rows: 1,
-    series: 1,
-    rowsA: [1],
-    seriesA: [1],
-  };
-
-  let startingPoint = {
-    numberOfSeries: 1,
-    series: [
-      {
-        seriesNum: 1,
-        numberOfExer: 1,
-        exercies: [{ mg: "klatka", e: "benchpress" }],
-      },
-    ],
-  };
-
-  useEffect(() => {
-    setCurrentTemplate(startingPoint);
-    console.log(currentTemplate);
-  }, []);
-
-  console.log(currentTemplate);
-  return (
-    <>
-      <div>
-        {startingPoint.series.map((obj, idx) => (
-          <div>
-            <p>
-              Series # :{obj.seriesNum}
-              {obj.exercies.map((obj1, idx1) => (
-                <div>{obj1.mg} and {obj1.e}</div>
-              ))}
-            </p>
-          </div>
-        ))}
-      </div>
-    </>
-  );
-}
 
 function UserHomePage() {
   const usName = useStore((state: any) => state.userName);
@@ -80,7 +37,7 @@ function UserHomePage() {
             <button>Logout</button>
             <h1>Hello again! {usName}</h1>
             <SideBar />
-            <EditTemplate />
+            <Table />
             {userWorkouts.map((workout, idx: number) => (
               <div>
                 <span>data : {workout.date} &nbsp;</span>

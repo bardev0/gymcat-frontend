@@ -8,3 +8,7 @@ body {
 p {
   font-style: italic;
 }
+
+.rowBlock {
+  display: block;
+}
