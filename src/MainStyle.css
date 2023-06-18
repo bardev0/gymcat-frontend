@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap");
-
+:root {
+--main-bg-color: beige;
+}
 body {
   font-family: "Roboto Condensed", sans-serif;
   height: 100%;
@@ -7,24 +9,25 @@ body {
 }
 
 .main {
-  background: beige;
-  width: 50%;
-  height: 50%;
+  background: var(--main-bg-color);
+  width: 60%;
+  height: 65%;
   position: fixed;
-  top: 25%;
+  top: 10%;
   bottom: 25%;
-  left: 25%;
-  right: 25%;
+  left: 20%;
+  right: 20%;
 }
 
 .home {
-  height: 50%;
-  height: 50%;
+	background: var(--main-bg-color);
+  height: 60%;
+  height: 65%;
   position: fixed;
-  top: 25%;
+  top: 10%;
   bottom: 25%;
-  left: 25%;
-  right: 25%;
+  left: 20%;
+  right: 20%;
 }
 
 button {
