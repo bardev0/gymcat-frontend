@@ -5,6 +5,7 @@ const useStore = create((set) => ({
   isUserLoggedIn: false,
   userWorkouts: [],
   startingTemplate: [],
+  temporaryWorkout: [],
   setUserName: (name: string) =>
     set((state: any) => ({ userName: (state.userName = name) })),
   setIsUserLogged: (login_state: any) =>
@@ -18,6 +19,10 @@ const useStore = create((set) => ({
   setTemplateArry: (arr: Array<any>) =>
     set((state: any) => ({
       startingTemplate: (state.startingTemplate = arr),
+    })),
+  setWorkout: (arr: Array<any>) =>
+    set((state: any) => ({
+      temporaryWorkout: (state.temporaryWorkout = arr),
     })),
 }));
 

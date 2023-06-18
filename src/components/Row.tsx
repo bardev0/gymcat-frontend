@@ -1,10 +1,23 @@
-import { useState } from "react";
+import * as React from "react";
+import { useEffect, useState } from "react";
 import "../MainStyle.css";
 import useStore from "../Store";
 function Row(props: any) {
   const storAry = useStore((state: any) => state.startingTemplate);
   const setTemplateArry = useStore((state: any) => state.setTemplateArry);
-  const [total, setTotal] = useState<number | undefined>(0);
+  const work = useStore((state: any) => {
+    state.temporaryWorkout;
+  });
+  const setTempWorkout = useStore((state: any) => state.setWorkout);
+
+  const [workout, setWorkout] = useState(storAry);
+  const [mg, setMg] = useState("");
+  const [exer, setExerc] = useState("");
+  const [pow, setPow] = useState(0);
+  const [kg, setKg] = useState(0);
+  const [multi, setMulti] = useState(0);
+  const [serNum, setSerNum] = useState(0);
+  const [total, setTotal] = useState(0);
 
   interface Row {
     numerRow: number;
@@ -24,7 +37,8 @@ function Row(props: any) {
       e: string,
       m: number,
       p: number,
-      kg: number
+      kg: number,
+      total: number
     ) {
       this.numerSerii = nS;
       this.mg = mg;
@@ -32,63 +46,76 @@ function Row(props: any) {
       this.multiplier = m;
       this.pow = p;
       this.kilog = kg;
-    }
-
-    calcTotal(m: number, p: number, kg: number) {
-      this.total = m * p * kg;
+      this.total = total;
     }
   }
 
-  // console.log(storAry);
-	// with every update row goes blanc
+  useEffect(() => {
+    let total = multi * (pow * kg);
+    if (isNaN(total)) {
+      setTotal(0);
+    } else {
+      setTotal(total);
+    }
+  }, [kg, pow, multi]);
 
-  let r = new Row();
-	r.numerRow = props.numOfRow
-  // move row to store array
+  useEffect(() => {
+    let temp = storAry;
+    console.log(temp[props.numberOfRow]);
+    let r = new Row(serNum, mg, exer, multi, pow, kg, total);
+    console.log(r);
+    temp[props.numberOfRow] = r;
+    console.log(temp);
+    setTemplateArry(temp);
+  }, [serNum, mg, exer, kg, pow, multi, total]);
 
-  function updateStore(rowIdx: number) {
-    console.log(storAry);
-    console.log(typeof storAry);
-    console.log(storAry[1]);
-  }
+
+  const changeMg = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setMg(e.target.value);
+  };
+
+  const changeExer = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setExerc(e.target.value);
+  };
 
   const changeSerNum = (e: React.ChangeEvent<HTMLInputElement>) => {
-    r.numerSerii = parseInt(e.target.value, 10);
-    r.calcTotal(r.multiplier, r.pow, r.kilog);
-    updateStore(1);
+    let t = parseInt(e.target.value, 10);
 
-    console.log(r);
+    if (isNaN(t)) {
+      window.alert("Provide correct series number");
+    } else {
+      setSerNum(parseInt(e.target.value, 10));
+    }
   };
-
   const changeMulti = (e: React.ChangeEvent<HTMLInputElement>) => {
-    r.multiplier = parseInt(e.target.value, 10);
-    r.calcTotal(r.multiplier, r.pow, r.kilog);
-    updateStore(1);
-
-    console.log(r);
+    let t = parseInt(e.target.value, 10);
+    if (isNaN(t)) {
+      setMulti(0);
+    } else {
+      setMulti(parseInt(e.target.value, 10));
+    }
   };
-
   const changePow = (e: React.ChangeEvent<HTMLInputElement>) => {
-    r.pow = parseInt(e.target.value, 10);
-    r.calcTotal(r.multiplier, r.pow, r.kilog);
-    updateStore(1);
-
-    console.log(r);
+    let t = parseInt(e.target.value, 10);
+    if (isNaN(t)) {
+      setMulti(0);
+    } else {
+      setPow(parseInt(e.target.value, 10));
+    }
   };
   const changeKg = (e: React.ChangeEvent<HTMLInputElement>) => {
-    r.kilog = parseInt(e.target.value, 10);
-    r.calcTotal(r.multiplier, r.pow, r.kilog);
-    updateStore(1);
-
-    console.log(r);
+    let t = parseInt(e.target.value, 10);
+    if (isNaN(t)) {
+      setMulti(0);
+    } else {
+      setKg(parseInt(e.target.value, 10));
+    }
   };
-
-  return (
     <>
-      <div>
+      <div id={props.numberOfRow + 1}>
         <input onChange={changeSerNum} placeholder="numer serii"></input>
-        <input placeholder="grupa"></input>
-        <input placeholder="cwiczenie"></input>
+        <input onChange={changeMg} placeholder="grupa"></input>
+        <input onChange={changeExer} placeholder="cwiczenie"></input>
         <input onChange={changeMulti} placeholder="mnoznik"></input>
         <input onChange={changePow} placeholder="pow"></input>
         <input onChange={changeKg} placeholder="kg"></input>
