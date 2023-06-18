@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import MainView from "../components/MainView";
 import SideBar from "../components/SideBar";
 import Table from "../components/Table";
 import "../MainStyle.css";
@@ -41,8 +42,8 @@ function UserHomePage() {
           <div>
             <button>Logout</button>
             <h1>Hello again! {usName}</h1>
-            <SideBar logic={changeView} />
-                        {view}
+            {<SideBar logic={changeView} />}
+            <MainView view={view} />
           </div>
         ) : (
           <h1>Login To Enter first!</h1>
