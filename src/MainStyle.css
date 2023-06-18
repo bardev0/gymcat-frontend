@@ -2,11 +2,37 @@
 
 body {
   font-family: "Roboto Condensed", sans-serif;
-  /* background-color: #fefae0; */
+  height: 100%;
+  position: relative;
 }
 
-p {
-  font-style: italic;
+.main {
+  background: beige;
+  width: 50%;
+  height: 50%;
+  position: fixed;
+  top: 25%;
+  bottom: 25%;
+  left: 25%;
+  right: 25%;
+}
+
+.home {
+  height: 50%;
+  height: 50%;
+  position: fixed;
+  top: 25%;
+  bottom: 25%;
+  left: 25%;
+  right: 25%;
+}
+
+button {
+	background-color: transparent;
+	border: 2px solid grey;
+	margin: 5px;
+	padding: 5px;
+	border-radius: 10%;
 }
 
 .rowBlock {

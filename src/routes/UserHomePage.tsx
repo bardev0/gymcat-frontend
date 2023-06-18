@@ -37,7 +37,7 @@ function UserHomePage() {
 
   return (
     <>
-      <div>
+      <div className="home">
         {loged_status ? (
           <div>
             <button>Logout</button>
@@ -46,7 +46,7 @@ function UserHomePage() {
             <MainView view={view} />
           </div>
         ) : (
-          <h1>Login To Enter first!</h1>
+          <h1 className="home">Login To Enter first!</h1>
         )}
       </div>
     </>

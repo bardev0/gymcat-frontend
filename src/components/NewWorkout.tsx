@@ -22,16 +22,15 @@ function NewWorkout() {
   }, []);
 
   // remove hardcode endpiont
-	//
+  //
   const handleClick = async () => {
     let respons = await fetch("http://localhost:5001/addWorkout", {
-			headers: {'Content-Type': 'application/json'},
+      headers: { "Content-Type": "application/json" },
       method: "POST",
       mode: "cors",
-      body: JSON.stringify({"work": value.startingTemplate}),
-    }) 
-		}
-	
+      body: JSON.stringify({ work: value.startingTemplate }),
+    });
+  };
 
   return (
     <>

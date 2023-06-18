@@ -7,7 +7,7 @@ import { Link } from "../../node_modules/react-router-dom/dist/index";
 function LandingPage() {
   return (
     <>
-      <div>
+      <div className="main">
         <Header></Header>
 
         <p>Enterteining Giberish</p>
