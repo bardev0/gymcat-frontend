@@ -30,11 +30,10 @@ function Table() {
     setTemplateArry(temp);
   };
 
-	// debug function
+  // debug function
   const checkStore = () => {
     console.table(storeAry);
   };
-
 
   return (
     <>

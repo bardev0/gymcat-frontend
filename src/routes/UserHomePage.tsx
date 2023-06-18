@@ -11,6 +11,7 @@ function UserHomePage() {
   const setWorkouts = useStore((state: any) => state.setUserWorkouts);
   const userWorkouts = useStore((state: any) => state.userWorkouts);
 
+  const [view, setView] = useState("dashboard");
   // move server path out of code
   useEffect(() => {
     fetch("http://191.96.53.225:3000/testExport", {
@@ -19,13 +20,17 @@ function UserHomePage() {
     })
       .then((response) => response.json())
       .then((wok) => {
-        console.log(wok);
+        // console.log(wok);
         setWorkouts(wok);
       });
   }, []);
 
-  console.log(loged_status);
-  console.log(usName);
+  function changeView(view: string) {
+    console.log(view);
+    setView(view);
+  }
+  // console.log(loged_status);
+  // console.log(usName);
 
   // add dashboard component
 
@@ -36,14 +41,8 @@ function UserHomePage() {
           <div>
             <button>Logout</button>
             <h1>Hello again! {usName}</h1>
-            <SideBar />
-            <Table />
-            {userWorkouts.map((workout, idx: number) => (
-              <div>
-                <span>data : {workout.date} &nbsp;</span>
-                <span>total dnia : {workout.totalDay}</span>
-              </div>
-            ))}
+            <SideBar logic={changeView} />
+                        {view}
           </div>
         ) : (
           <h1>Login To Enter first!</h1>

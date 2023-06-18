@@ -69,7 +69,6 @@ function Row(props: any) {
     setTemplateArry(temp);
   }, [serNum, mg, exer, kg, pow, multi, total]);
 
-
   const changeMg = (e: React.ChangeEvent<HTMLInputElement>) => {
     setMg(e.target.value);
   };
@@ -111,18 +110,17 @@ function Row(props: any) {
       setKg(parseInt(e.target.value, 10));
     }
   };
-    <>
-      <div id={props.numberOfRow + 1}>
-        <input onChange={changeSerNum} placeholder="numer serii"></input>
-        <input onChange={changeMg} placeholder="grupa"></input>
-        <input onChange={changeExer} placeholder="cwiczenie"></input>
-        <input onChange={changeMulti} placeholder="mnoznik"></input>
-        <input onChange={changePow} placeholder="pow"></input>
-        <input onChange={changeKg} placeholder="kg"></input>
-        <span>{total}</span>
-      </div>
-    </>
-  );
+  <>
+    <div id={props.numberOfRow + 1}>
+      <input onChange={changeSerNum} placeholder="numer serii"></input>
+      <input onChange={changeMg} placeholder="grupa"></input>
+      <input onChange={changeExer} placeholder="cwiczenie"></input>
+      <input onChange={changeMulti} placeholder="mnoznik"></input>
+      <input onChange={changePow} placeholder="pow"></input>
+      <input onChange={changeKg} placeholder="kg"></input>
+      <span>{total}</span>
+    </div>
+  </>;
 }
 
 export default Row;
