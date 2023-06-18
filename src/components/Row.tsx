@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import "../MainStyle.css";
 import useStore from "../Store";
 
-
 function Row(props: any) {
   const storAry = useStore((state: any) => state.startingTemplate);
   const setTemplateArry = useStore((state: any) => state.setTemplateArry);
@@ -112,22 +111,20 @@ function Row(props: any) {
       setKg(parseInt(e.target.value, 10));
     }
   };
-	
-	return <>
-<div id={props.numberOfRow + 1}>
-      <input onChange={changeSerNum} placeholder="numer serii"></input>
-      <input onChange={changeMg} placeholder="grupa"></input>
-      <input onChange={changeExer} placeholder="cwiczenie"></input>
-      <input onChange={changeMulti} placeholder="mnoznik"></input>
-      <input onChange={changePow} placeholder="pow"></input>
-      <input onChange={changeKg} placeholder="kg"></input>
-      <span>{total}</span>
-    </div>
 
-	</>
+  return (
+    <>
+      <div id={props.numberOfRow + 1}>
+        <input onChange={changeSerNum} placeholder="numer serii"></input>
+        <input onChange={changeMg} placeholder="grupa"></input>
+        <input onChange={changeExer} placeholder="cwiczenie"></input>
+        <input onChange={changeMulti} placeholder="mnoznik"></input>
+        <input onChange={changePow} placeholder="pow"></input>
+        <input onChange={changeKg} placeholder="kg"></input>
+        <span>{total}</span>
+      </div>
+    </>
+  );
 }
 
-export default Row
-
-
-
+export default Row;

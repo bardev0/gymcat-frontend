@@ -43,7 +43,7 @@ function Table() {
         <button>Generate</button>
         <div className="rowBlock">
           {rowsNum.map((obj, idx) => (
-            <Row props={12} numberOfRow={idx} />
+            <Row numberOfRow={idx} />
           ))}
         </div>
         <button onClick={checkStore}> print Arry</button>

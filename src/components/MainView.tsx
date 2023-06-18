@@ -11,29 +11,28 @@ function MainView(props: any) {
   switch (props.view) {
     case "workouts":
       componentToRender = <ShowWorkouts />;
-  		break;
-	
-		case "profile":
-			componentToRender = <Profile />;
-			break;
+      break;
 
-		case "new workout":
-			componentToRender = <NewWorkout />;
-			break;
+    case "profile":
+      componentToRender = <Profile />;
+      break;
 
-		case "templates":
-			componentToRender = <Templates />;
-			break;
-		
-		case "analysys":
-			componentToRender = <Analysys />;
-			break;
+    case "new workout":
+      componentToRender = <NewWorkout />;
+      break;
 
-		case "settings":
-		componentToRender = <Settings />;
-		break;
+    case "templates":
+      componentToRender = <Templates />;
+      break;
 
-	}
+    case "analysys":
+      componentToRender = <Analysys />;
+      break;
+
+    case "settings":
+      componentToRender = <Settings />;
+      break;
+  }
   return (
     <>
       <div>{componentToRender}</div>
