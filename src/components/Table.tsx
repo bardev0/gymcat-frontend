@@ -4,6 +4,10 @@ import useStore from "../Store";
 function Table() {
   const storeAry = useStore((state: any) => state.startingTemplate);
   const setTemplateArry = useStore((state: any) => state.setTemplateArry);
+
+  // store data trening
+  // store czas start
+  // store czas end
   let [rowsNum, setRowsNum] = useState([1]);
 
   const rowPlus = () => {
@@ -37,7 +41,16 @@ function Table() {
 
   return (
     <>
-      <div>
+      <div className="dataTime">
+        <div>
+          <p>Data</p>
+          <input type="date"></input>
+          <p>Godzina start</p>
+          <input type="time"></input>
+          <p>godzina koniec</p>
+          <input type="time"></input>
+        </div>
+
         <button onClick={rowPlus}>+ Row</button>
         <button onClick={rowMinus}>- Row</button>
         <button>Generate</button>

@@ -6,6 +6,7 @@ function NewWorkout() {
   // const [table, setTable] = useState({});
 
   const [value, setValue] = useState(useStore.getState().startingTemplate);
+  const userName = useStore((state: any) => state.userName);
 
   // redo for learning
   useEffect(() => {
@@ -22,13 +23,48 @@ function NewWorkout() {
   }, []);
 
   // remove hardcode endpiont
-  //
+  let temp = {
+    workoutNumber: 0,
+    date: "07.05.2023",
+    timeStart: "20:00",
+    timeEnd: "n/a",
+    listOfRows: [
+      {
+        seriesNumber: 1,
+        muscleGroup: "biecps",
+        exerciseName: "dumbbell%curls",
+        exerciseMultiplier: 2,
+        repetitions: 12,
+        weight: 4,
+        totalExercise: 96,
+      },
+    ],
+    totalDay: 624,
+  };
+
   const handleClick = async () => {
+    let dateAdded = new Date().toJSON();
+    console.log(value.startingTemplate);
+	
+
+		// combine with types 
+    let workoutToSend = {
+			userName: userName,
+			dateAdded: dateAdded,
+			date: "",
+			timeStart: "",
+			timeEnd: "",
+			listOfRows: value.startingTemplate
+		};
+		
+		console.log(workoutToSend)
+		//
+
     let respons = await fetch("http://localhost:5001/addWorkout", {
       headers: { "Content-Type": "application/json" },
       method: "POST",
       mode: "cors",
-      body: JSON.stringify({ work: value.startingTemplate }),
+      body: JSON.stringify(workoutToSend),
     });
   };
 
@@ -42,5 +78,4 @@ function NewWorkout() {
 
 export default NewWorkout;
 
-// setTable -> props tree until row
-// TO-DO grab templateWorkouts form the store and send it using fetch to endpoint of backend
+//how the fuck it works 
