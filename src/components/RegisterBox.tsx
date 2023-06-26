@@ -1,5 +1,6 @@
 import { useState } from "react";
 import * as bcryptjs from "bcryptjs";
+import * as z from "zod";
 
 import paths from "../utils";
 function RegisterBox() {
@@ -12,13 +13,39 @@ function RegisterBox() {
 
   const handleName = (e: any) => setUsername(e.target.value);
   const handlePassw = (e: any) => setPassword(e.target.value);
+
   const handleEmail = (e: any) => setEmail(e.target.value);
-  console.log(username + " " + password);
+  // console.log(username + " " + password);
 
   const sendData = async () => {
-    let saltR = 13;
-    let data = { name: username, email: email };
 
+    let data = { name: username };
+
+    // add requierments for pass strenght
+    const passwordStrenght = z.string().min(5).max(12);
+    const emailSchema = z.string().email();
+
+    // add validation for username, password strenght, email
+
+    let passwValid = passwordStrenght.safeParse(password);
+    let emailValid = emailSchema.safeParse(email);
+    console.log(passwValid);
+    console.log(emailValid);
+		
+		if (emailValid.success) {
+			Object.assign(data, {email: email})
+		} else {
+			window.alert("Enter Valid Email")
+		}
+
+    if (passwValid.success) {
+      console.log("pass safe");
+    } else {
+      window.alert("Enter Safer Password");
+    }
+
+		// move this inside password Validation and execute request
+    let saltR = 13;
     let salt = await bcryptjs.genSalt(saltR);
     let hash = await bcryptjs.hash(password, salt);
 
@@ -33,11 +60,6 @@ function RegisterBox() {
     });
     // add logic to veryfi if :
     // user already exists
-    // password is strong
-    // email is vali
-    //
-    // and add logic to communicate
-    // all of the above
     // resitration complete -> move to sign in!
 
     console.log(resposne);

@@ -28,6 +28,9 @@ dependencies:
   sort-by:
     specifier: ^1.2.0
     version: 1.2.0
+  zod:
+    specifier: ^3.21.4
+    version: 3.21.4
   zustand:
     specifier: ^4.3.8
     version: 4.3.8(react@18.2.0)
@@ -2614,6 +2617,13 @@ packages:
       }
     engines: { node: ">=10" }
     dev: true
+
+  /zod@3.21.4:
+    resolution:
+      {
+        integrity: sha512-m46AKbrzKVzOzs/DZgVnG5H55N1sv1M8qZU3A8RIKbs3mrACDNeIOeilDymVb2HdmP8uwshOCF4uJ8uM9rCqJw==,
+      }
+    dev: false
 
   /zustand@4.3.8(react@18.2.0):
     resolution:

@@ -45,20 +45,19 @@ function NewWorkout() {
   const handleClick = async () => {
     let dateAdded = new Date().toJSON();
     console.log(value.startingTemplate);
-	
 
-		// combine with types 
+    // combine with types
     let workoutToSend = {
-			userName: userName,
-			dateAdded: dateAdded,
-			date: "",
-			timeStart: "",
-			timeEnd: "",
-			listOfRows: value.startingTemplate
-		};
-		
-		console.log(workoutToSend)
-		//
+      userName: userName,
+      dateAdded: dateAdded,
+      date: "",
+      timeStart: "",
+      timeEnd: "",
+      listOfRows: value.startingTemplate,
+    };
+
+    console.log(workoutToSend);
+    //
 
     let respons = await fetch("http://localhost:5001/addWorkout", {
       headers: { "Content-Type": "application/json" },
@@ -78,4 +77,4 @@ function NewWorkout() {
 
 export default NewWorkout;
 
-//how the fuck it works 
+//how the fuck it works
