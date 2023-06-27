@@ -14,16 +14,35 @@ function UserHomePage() {
 
   const [view, setView] = useState("dashboard");
   // move server path out of code
-  useEffect(() => {
-    fetch("http://191.96.53.225:3000/testExport", {
-      method: "get",
+
+  async function f() {
+    let result = await fetch("http://localhost:5001/retriveUserWorkouts", {
+      method: "POST",
       mode: "cors",
+      body: JSON.stringify({ user: "greg" }),
     })
       .then((response) => response.json())
       .then((wok) => {
-        // console.log(wok);
+        console.log(wok);
         setWorkouts(wok);
       });
+  }
+  useEffect(() => {
+    async function f() {
+      let result = await fetch("http://localhost:5001/retriveUserWorkouts", {
+        method: "POST",
+        mode: "cors",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ user: usName }),
+      })
+        .then((response) => response.json())
+        .then((wok) => {
+          console.log(wok);
+          setWorkouts(wok);
+        });
+    }
+
+    f();
   }, []);
 
   function changeView(view: string) {

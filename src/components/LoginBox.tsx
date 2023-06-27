@@ -26,13 +26,15 @@ function LoginBox() {
   console.log(username + " " + password);
 
   const sendData = async () => {
-    const resposne = await fetch("http://191.96.53.225:3000/login", {
+    const resposne = await fetch("http://localhost:5001/login", {
       method: "POST",
       mode: "cors",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
     });
+    console.log(resposne);
     resposne.json().then((o) => {
+			console.log(o)
       if (o.loginStatus == "logged in") {
         setSUserName(username);
         setIsUserLogged(true);

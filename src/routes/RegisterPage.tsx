@@ -8,9 +8,10 @@ function RegisterPage() {
     <>
       <div>
         <RegisterBox></RegisterBox>
-      <p>Already a user ? <Link to="/gymcat/login">Log in</Link></p>
-			</div>
-
+        <p>
+          Already a user ? <Link to="/gymcat/login">Log in</Link>
+        </p>
+      </div>
     </>
   );
 }
