@@ -6,3 +6,31 @@ body {
   position: relative;
 }
 
+.main {
+  width: 90%;
+  margin-left: 5%;
+
+  height: 90vh;
+  margin-top: 5vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: lightsalmon; */
+  flex-direction: column;
+}
+
+.header {
+  text-align: center;
+  /* background-color: aliceblue; */
+}
+
+.registerInp {
+  border: 1px solid;
+}
+
+.registerLabel {
+  /* background-color: aqua; */
+  width: 10vw;
+  height: 100px;
+}

@@ -6,7 +6,7 @@ import { Link } from "../../node_modules/react-router-dom/dist/index";
 function RegisterPage() {
   return (
     <>
-      <div>
+      <div className="main">
         <RegisterBox></RegisterBox>
         <p>
           Already a user ? <Link to="/gymcat/login">Log in</Link>

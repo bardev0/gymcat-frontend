@@ -12,10 +12,10 @@ function ShowWorkouts(props: any) {
         {userWorkouts.map((obj, key) => (
           <div>
             {obj.date}
-						<span> </span>
-						{obj.timeStart}
-						<span> </span>
-						{obj.totalDay}
+            <span> </span>
+            {obj.timeStart}
+            <span> </span>
+            {obj.totalDay}
           </div>
         ))}
       </div>

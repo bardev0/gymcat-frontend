@@ -18,6 +18,8 @@ function LandingPage() {
           <Link to="/gymcat/register">
             <h3>Sign Up</h3>
           </Link>
+        </div>
+        <div>
           <Link to="/gymcat/resetPassword">
             <h5>Forgot Password</h5>
           </Link>

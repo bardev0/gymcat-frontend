@@ -34,7 +34,7 @@ function LoginBox() {
     });
     console.log(resposne);
     resposne.json().then((o) => {
-			console.log(o)
+      console.log(o);
       if (o.loginStatus == "logged in") {
         setSUserName(username);
         setIsUserLogged(true);

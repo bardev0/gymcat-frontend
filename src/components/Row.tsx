@@ -19,9 +19,8 @@ function Row(props: any) {
   const [multi, setMulti] = useState(0);
   const [serNum, setSerNum] = useState(0);
   const [total, setTotal] = useState(0);
-	
 
-	// addselection of exercices and muscle groups
+  // addselection of exercices and muscle groups
   interface Row {
     numerRow: number;
     numerSerii?: number;

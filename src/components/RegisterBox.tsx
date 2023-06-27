@@ -89,13 +89,21 @@ function RegisterBox() {
             <label className="registerLabel" id="regInpUsername">
               username :
             </label>
-            <input onChange={handleName} type="text"></input>
+            <input
+              className="registerInp"
+              onChange={handleName}
+              type="text"
+            ></input>
           </form>
           <form>
             <label className="registerLabel" id="regInpPass">
               password :
             </label>
-            <input onChange={handlePassw} type={passwordVisible}></input>
+            <input
+              className="registerInp"
+              onChange={handlePassw}
+              type={passwordVisible}
+            ></input>
           </form>
           <form>
             <label className="emailLabel" id="regInpEmail">
@@ -104,7 +112,7 @@ function RegisterBox() {
             <input onChange={handleEmail} type="text"></input>
           </form>
           <button onClick={sendData}>Regiser</button>
-          <button onClick={checkIfUserAlreadyExists}>Check User</button>
+          {/*        <button onClick={checkIfUserAlreadyExists}>Check User</button> */}
         </div>
       </div>
     </>
