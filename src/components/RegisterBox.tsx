@@ -17,52 +17,71 @@ function RegisterBox() {
   const handleEmail = (e: any) => setEmail(e.target.value);
   // console.log(username + " " + password);
 
-  const sendData = async () => {
-
-    let data = { name: username };
-
-    // add requierments for pass strenght
-    const passwordStrenght = z.string().min(5).max(12);
-    const emailSchema = z.string().email();
-
-    // add validation for username, password strenght, email
-
-    let passwValid = passwordStrenght.safeParse(password);
-    let emailValid = emailSchema.safeParse(email);
-    console.log(passwValid);
-    console.log(emailValid);
-		
-		if (emailValid.success) {
-			Object.assign(data, {email: email})
-		} else {
-			window.alert("Enter Valid Email")
-		}
-
-    if (passwValid.success) {
-      console.log("pass safe");
-    } else {
-      window.alert("Enter Safer Password");
-    }
-
-		// move this inside password Validation and execute request
-    let saltR = 13;
-    let salt = await bcryptjs.genSalt(saltR);
-    let hash = await bcryptjs.hash(password, salt);
-
-    Object.assign(data, { password: hash });
-    console.log(data);
-
-    const resposne = await fetch(paths.prodRegister, {
+  const checkIfUserAlreadyExists = async () => {
+    const user = username;
+    const resp = await fetch(paths.devValidate, {
       method: "POST",
       mode: "cors",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
+      body: JSON.stringify({ user: user }),
     });
-    // add logic to veryfi if :
-    // user already exists
-    // resitration complete -> move to sign in!
 
-    console.log(resposne);
+    return await resp.json();
+  };
+
+  const sendData = async () => {
+    let x = await checkIfUserAlreadyExists();
+		console.log(x)
+    if (x.doesUserExist == true) {
+      console.log("User Exists");
+    } else {
+      console.log("User Does not Exist");
+
+      let data = { name: username };
+
+      // add requierments for pass strenght
+      const passwordStrenght = z.string().min(5).max(12);
+      const emailSchema = z.string().email();
+
+      // add validation for username, password strenght, email
+
+      let passwValid = passwordStrenght.safeParse(password);
+      let emailValid = emailSchema.safeParse(email);
+      console.log(passwValid);
+      console.log(emailValid);
+
+      if (emailValid.success) {
+        Object.assign(data, { email: email });
+      } else {
+        window.alert("Enter Valid Email");
+      }
+
+      if (passwValid.success) {
+        console.log("pass safe");
+      } else {
+        window.alert("Enter Safer Password");
+      }
+
+      // move this inside password Validation and execute request
+      let saltR = 13;
+      let salt = await bcryptjs.genSalt(saltR);
+      let hash = await bcryptjs.hash(password, salt);
+
+      Object.assign(data, { password: hash });
+      console.log(data);
+
+      const resposne = await fetch(paths.prodRegister, {
+        method: "POST",
+        mode: "cors",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      // add logic to veryfi if :
+      // user already exists
+      // resitration complete -> move to sign in!
+
+      console.log(resposne);
+    }
   };
 
   return (
@@ -89,6 +108,7 @@ function RegisterBox() {
             <input onChange={handleEmail} type="text"></input>
           </form>
           <button onClick={sendData}>Regiser</button>
+          <button onClick={checkIfUserAlreadyExists}>Check User</button>
         </div>
       </div>
     </>
