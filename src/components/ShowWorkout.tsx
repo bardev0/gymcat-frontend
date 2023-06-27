@@ -11,8 +11,11 @@ function ShowWorkouts(props: any) {
         aaaaaa{/* map trough workouts*/}
         {userWorkouts.map((obj, key) => (
           <div>
-            <p>{obj.date}</p>
-						<p>{obj.totalDay}</p>
+            {obj.date}
+						<span> </span>
+						{obj.timeStart}
+						<span> </span>
+						{obj.totalDay}
           </div>
         ))}
       </div>

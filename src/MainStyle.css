@@ -1,43 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap");
-:root {
-  --main-bg-color: beige;
-}
+
 body {
   font-family: "Roboto Condensed", sans-serif;
   height: 100%;
   position: relative;
 }
 
-.main {
-  background: var(--main-bg-color);
-  width: 60%;
-  height: 65%;
-  position: fixed;
-  top: 10%;
-  bottom: 25%;
-  left: 20%;
-  right: 20%;
-}
-
-.home {
-  background: var(--main-bg-color);
-  height: 60%;
-  height: 65%;
-  position: fixed;
-  top: 10%;
-  bottom: 25%;
-  left: 20%;
-  right: 20%;
-}
-
-button {
-  background-color: transparent;
-  border: 2px solid grey;
-  margin: 5px;
-  padding: 5px;
-  border-radius: 10%;
-}
-
-.rowBlock {
-  display: block;
-}
