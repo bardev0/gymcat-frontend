@@ -31,9 +31,9 @@ function RegisterBox() {
 
   const sendData = async () => {
     let x = await checkIfUserAlreadyExists();
-		console.log(x)
     if (x.doesUserExist == true) {
       console.log("User Exists");
+			window.alert("User Already Exists, provide different username")
     } else {
       console.log("User Does not Exist");
 
@@ -76,10 +76,6 @@ function RegisterBox() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
       });
-      // add logic to veryfi if :
-      // user already exists
-      // resitration complete -> move to sign in!
-
       console.log(resposne);
     }
   };
