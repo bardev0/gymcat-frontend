@@ -33,7 +33,7 @@ function RegisterBox() {
     let x = await checkIfUserAlreadyExists();
     if (x.doesUserExist == true) {
       console.log("User Exists");
-			window.alert("User Already Exists, provide different username")
+      window.alert("User Already Exists, provide different username");
     } else {
       console.log("User Does not Exist");
 
