@@ -1,9 +1,9 @@
 function Templates() {
-  return (
-    <>
-      <div>templates </div>
-    </>
-  );
+    return (
+        <>
+            <div>templates </div>
+        </>
+    );
 }
 
 export default Templates;

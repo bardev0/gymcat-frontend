@@ -5,16 +5,16 @@ import Header from "./components/Header";
 import "./MainStyle.css";
 
 function App() {
-  return (
-    <>
-      <div>
-        <Header></Header>
-        <LoginBox></LoginBox>
-        <RegisterBox></RegisterBox>
-        <p>No Boilerplate</p>
-      </div>
-    </>
-  );
+    return (
+        <>
+            <div>
+                <Header></Header>
+                <LoginBox></LoginBox>
+                <RegisterBox></RegisterBox>
+                <p>No Boilerplate</p>
+            </div>
+        </>
+    );
 }
 
 export default App;

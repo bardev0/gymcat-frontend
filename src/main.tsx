@@ -8,23 +8,23 @@ import UserHomePage from "./routes/UserHomePage";
 import ResetPassword from "./routes/ResetPassword";
 
 import {
-  createBrowserRouter,
-  RouterProvider,
+    createBrowserRouter,
+    RouterProvider,
 } from "../node_modules/react-router-dom/dist/index";
 
 const router = createBrowserRouter([
-  { path: "/gymcat/", element: <LandingPage /> },
-  { path: "/gymcat/login/", element: <LoginPage /> },
-  { path: "/gymcat/register/", element: <RegisterPage /> },
-  { path: "/gymcat/home", element: <UserHomePage /> },
-  { path: "/gymcat/resetPassword", element: <ResetPassword /> },
+    { path: "/gymcat/", element: <LandingPage /> },
+    { path: "/gymcat/login/", element: <LoginPage /> },
+    { path: "/gymcat/register/", element: <RegisterPage /> },
+    { path: "/gymcat/home", element: <UserHomePage /> },
+    { path: "/gymcat/resetPassword", element: <ResetPassword /> },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
-  <React.StrictMode>
-    <RouterProvider
-      router={router}
-      fallbackElement={<LandingPage />}
-    ></RouterProvider>
-  </React.StrictMode>
+    <React.StrictMode>
+        <RouterProvider
+            router={router}
+            fallbackElement={<LandingPage />}
+        ></RouterProvider>
+    </React.StrictMode>
 );

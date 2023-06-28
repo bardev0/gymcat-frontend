@@ -6,38 +6,38 @@ import Analysys from "./Analysys";
 import Settings from "./Settings";
 
 function MainView(props: any) {
-  let componentToRender;
+    let componentToRender;
 
-  switch (props.view) {
-    case "workouts":
-      componentToRender = <ShowWorkouts />;
-      break;
+    switch (props.view) {
+        case "workouts":
+            componentToRender = <ShowWorkouts />;
+            break;
 
-    case "profile":
-      componentToRender = <Profile />;
-      break;
+        case "profile":
+            componentToRender = <Profile />;
+            break;
 
-    case "new workout":
-      componentToRender = <NewWorkout />;
-      break;
+        case "new workout":
+            componentToRender = <NewWorkout />;
+            break;
 
-    case "templates":
-      componentToRender = <Templates />;
-      break;
+        case "templates":
+            componentToRender = <Templates />;
+            break;
 
-    case "analysys":
-      componentToRender = <Analysys />;
-      break;
+        case "analysys":
+            componentToRender = <Analysys />;
+            break;
 
-    case "settings":
-      componentToRender = <Settings />;
-      break;
-  }
-  return (
-    <>
-      <div>{componentToRender}</div>
-    </>
-  );
+        case "settings":
+            componentToRender = <Settings />;
+            break;
+    }
+    return (
+        <>
+            <div>{componentToRender}</div>
+        </>
+    );
 }
 
 export default MainView;

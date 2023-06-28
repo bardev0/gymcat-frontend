@@ -1,36 +1,181 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap");
 
+:root {
+    --main-primary-color: rgb(178, 191, 212);
+    --maxRowFieldWidth: 10vw;
+    --minRowFiledWidth: 4vw;
+    --medRowFiledWidth: 6vw;
+}
 body {
-  font-family: "Roboto Condensed", sans-serif;
-  height: 100%;
-  position: relative;
+    font-family: "Roboto Condensed", sans-serif;
+    height: 100%;
+    position: relative;
 }
 
 .main {
-  width: 90%;
-  margin-left: 5%;
+    width: 90%;
+    margin-left: 5%;
 
-  height: 90vh;
-  margin-top: 5vh;
+    height: 90vh;
+    margin-top: 5vh;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* background-color: lightsalmon; */
-  flex-direction: column;
+    position: absolute;
+
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    background-color: lightsalmon;
+    flex-direction: column;
 }
 
 .header {
-  text-align: center;
-  /* background-color: aliceblue; */
-}
-
-.registerInp {
-  border: 1px solid;
+    text-align: center;
+    /* background-color: aliceblue; */
 }
 
 .registerLabel {
-  /* background-color: aqua; */
-  width: 10vw;
-  height: 100px;
+    /* background-color: aqua; */
+    width: 10vw;
+    height: 100px;
+}
+
+.regForm input {
+    /* background-color: red;  */
+    display: inline-block;
+    width: 150px;
+    height: 2vh;
+    border: 1px solid gray;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.regForm label {
+    display: inline-block;
+    /* background-color: aquamarine; */
+    width: 100px;
+    height: 2vh;
+}
+
+.regForm button {
+    background-color: var(--main-primary-color);
+    border: 1px solid var(--main-primary-color);
+    border-radius: 5px;
+    margin: 5px;
+    margin-top: 15px;
+    width: 100px;
+    height: 4vh;
+}
+.errorBox {
+    margin: 5px;
+    text-align: center;
+    color: red;
+}
+
+.btnCenter {
+    display: flex;
+    justify-content: center;
+}
+
+aside button {
+    background-color: var(--main-primary-color);
+    border: 0;
+    border-radius: 5px;
+    margin: 10px 5px 20px 5px;
+    font-size: 20px;
+    padding: 10px 20px 10px 20px;
+}
+/* spread buttons to max width */
+aside {
+    width: 50vw;
+    background-color: lightgrey;
+}
+
+.dataTime {
+    height: 4vh;
+    display: flex;
+    /* background-color: blueviolet; */
+}
+
+.dataTime div {
+		background-color: antiquewhite;
+    display: flex;
+    width: 8vw;
+		margin: 0 10px 0 0;
+}
+
+.dataTime p {
+	/* line-height: 28px; */
+	vertical-align: middle;
+	background-color: red;
+	margin-right: 20px;
+	margin: 10px 10px 10px 0;
+}
+
+.dataTime input {
+	background-color: red;
+	border: 0;
+	border-radius: 5px;
+	margin: 10px 0 10px 0;
+}
+
+.inpSeria {
+    width: 2vw;
+}
+
+.inpGrupa {
+    /* background-color: blue; */
+    width: var(--maxRowFieldWidth);
+}
+
+.inpM {
+    width: var(--minRowFiledWidth);
+}
+
+.inpKg {
+    width: var(--medRowFiledWidth);
+}
+
+.inpEx {
+    width: var(--maxRowFieldWidth);
+
+    /* background-color: blue; */
+}
+
+.inpPow {
+    width: var(--medRowFiledWidth);
+}
+
+
+.rowBlock {
+	display: flex;
+	justify-content: center;
+	background-color: bisque;
+}
+.row {
+	display: block;
+}
+
+.row input {
+	height: 2vh;
+	margin: 0.2vh 0.1vw 0.2vh 0.1vw;
+}
+
+.rowTotal {
+		margin-left: 10px;
+		font-size: 20px;
+		vertical-align: middle;
+    display: inline-block;
+    background-color: red;
+    width: var(--minRowFieldWidth);
+}
+
+.mainBtn {
+    background-color: var(--main-primary-color);
+    border: 1px solid var(--main-primary-color);
+    border-radius: 5px;
+    margin: 5px;
+    margin-top: 15px;
+    width: 100px;
+    height: 4vh;
+
 }
