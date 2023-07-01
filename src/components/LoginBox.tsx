@@ -26,7 +26,7 @@ function LoginBox() {
     console.log(username + " " + password);
 
     const sendData = async () => {
-        const resposne = await fetch(paths.devLogin, {
+        const resposne = await fetch(paths.loginPath, {
             method: "POST",
             mode: "cors",
             headers: { "Content-Type": "application/json" },

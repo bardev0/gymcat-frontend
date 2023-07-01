@@ -19,7 +19,7 @@ function RegisterBox() {
 
     const checkIfUserAlreadyExists = async () => {
         const user = username;
-        const resp = await fetch(paths.devValidate, {
+        const resp = await fetch(paths.validatePath, {
             method: "POST",
             mode: "cors",
             headers: { "Content-Type": "application/json" },
@@ -70,7 +70,7 @@ function RegisterBox() {
             Object.assign(data, { password: hash });
             console.log(data);
 
-            const resposne = await fetch(paths.prodRegister, {
+            const resposne = await fetch(paths.registerPath, {
                 method: "POST",
                 mode: "cors",
                 headers: { "Content-Type": "application/json" },
