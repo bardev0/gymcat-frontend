@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "../../node_modules/react-router-dom/dist/index";
 import useStore from "../Store";
 import paths from "../utils";
-import "../MainStyle.css"
+import "../MainStyle.css";
 
 // add logic that enters also logs user in
 function LoginBox() {
@@ -26,8 +26,7 @@ function LoginBox() {
     console.log(username + " " + password);
 
     const sendData = async () => {
-
-				console.log(paths.loginPath)
+        console.log(paths.loginPath);
         const resposne = await fetch(paths.loginPath, {
             method: "POST",
             mode: "cors",

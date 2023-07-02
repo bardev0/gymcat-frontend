@@ -146,7 +146,9 @@ function Row(props: any) {
                     onChange={changeKg}
                     placeholder="kg"
                 ></input>
-                <div className="rowTotal"><span>{total}</span></div>
+                <div className="rowTotal">
+                    <span>{total}</span>
+                </div>
             </div>
         </>
     );

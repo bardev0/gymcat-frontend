@@ -2,7 +2,7 @@ import Table from "./Table";
 import useStore from "../Store";
 import { useEffect, useState } from "react";
 import paths from "../utils";
-import {IWorkout} from "../types";
+import { IWorkout } from "../types";
 function NewWorkout() {
     // const storeArry = useStore((state: any) => state.temporaryWorkout);
     // const [table, setTable] = useState({});
@@ -46,20 +46,17 @@ function NewWorkout() {
 
     const handleClick = async () => {
         let dateAdded = new Date().toJSON();
-					
-				
 
-				// NOT WORKING
+        // NOT WORKING
         let workoutToSend: IWorkout = {
-				workoutOwner: value.userName,
-				// grab date value
-				date: new Date().toString(),
-				timeStart:new Date().toString(), 
-				timeEnd:new Date().toString(), 
-        listOfRows: value.startingTemplate,
-				totalDay: 0
-        }; 
-
+            workoutOwner: value.userName,
+            // grab date value
+            date: new Date().toString(),
+            timeStart: new Date().toString(),
+            timeEnd: new Date().toString(),
+            listOfRows: value.startingTemplate,
+            totalDay: 0,
+        };
 
         console.log(value);
         //
@@ -76,9 +73,10 @@ function NewWorkout() {
         <>
             <Table></Table>
             <div className="btnCenter">
-						<button className="mainBtn" onClick={handleClick}>Save Workout</button>
-						</div>
-
+                <button className="mainBtn" onClick={handleClick}>
+                    Save Workout
+                </button>
+            </div>
         </>
     );
 }

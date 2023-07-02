@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap");
 
 :root {
-    --main-primary-color: rgb(178, 191, 212);
+    --main-primary-color: rgb(67, 149, 222);
     --maxRowFieldWidth: 10vw;
     --minRowFiledWidth: 4vw;
     --medRowFiledWidth: 6vw;
@@ -24,7 +24,7 @@ body {
     display: flex;
     /* justify-content: center; */
     align-items: center;
-    background-color: lightsalmon;
+    /* background-color: lightsalmon; */
     flex-direction: column;
 }
 
@@ -57,6 +57,9 @@ body {
 }
 
 .regForm button {
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
     background-color: var(--main-primary-color);
     border: 1px solid var(--main-primary-color);
     border-radius: 5px;
@@ -78,16 +81,17 @@ body {
 
 aside button {
     background-color: var(--main-primary-color);
+    color: white;
     border: 0;
     border-radius: 5px;
-    margin: 10px 5px 20px 5px;
+    margin: 10px 7px 20px 0px;
     font-size: 20px;
     padding: 10px 20px 10px 20px;
 }
 /* spread buttons to max width */
 aside {
     width: 50vw;
-    background-color: lightgrey;
+    /* background-color: lightgrey; */
 }
 
 .dataTime {
@@ -97,25 +101,25 @@ aside {
 }
 
 .dataTime div {
-		background-color: antiquewhite;
+    /* background-color: antiquewhite; */
     display: flex;
     width: 8vw;
-		margin: 0 10px 0 0;
+    margin: 0 10px 0 0;
 }
 
 .dataTime p {
-	/* line-height: 28px; */
-	vertical-align: middle;
-	background-color: red;
-	margin-right: 20px;
-	margin: 10px 10px 10px 0;
+    /* line-height: 28px; */
+    vertical-align: middle;
+    /* background-color: red; */
+    margin-right: 20px;
+    margin: 10px 10px 10px 0;
 }
 
 .dataTime input {
-	background-color: red;
-	border: 0;
-	border-radius: 5px;
-	margin: 10px 0 10px 0;
+    /* background-color: red; */
+    border: 0;
+    border-radius: 5px;
+    margin: 10px 0 10px 0;
 }
 
 .inpSeria {
@@ -145,37 +149,58 @@ aside {
     width: var(--medRowFiledWidth);
 }
 
-
 .rowBlock {
-	display: flex;
-	justify-content: center;
-	background-color: bisque;
+    display: flex;
+    justify-content: center;
+    /* background-color: bisque; */
 }
 .row {
-	display: block;
+    display: block;
 }
 
 .row input {
-	height: 2vh;
-	margin: 0.2vh 0.1vw 0.2vh 0.1vw;
+    height: 2vh;
+    margin: 0.2vh 0.1vw 0.2vh 0.1vw;
 }
 
 .rowTotal {
-		margin-left: 10px;
-		font-size: 20px;
-		vertical-align: middle;
+    margin-left: 10px;
+    font-size: 20px;
+    vertical-align: middle;
     display: inline-block;
-    background-color: red;
+    /* background-color: red; */
     width: var(--minRowFieldWidth);
 }
-
 .mainBtn {
+    font-size: 18px;
+    color: white;
     background-color: var(--main-primary-color);
     border: 1px solid var(--main-primary-color);
     border-radius: 5px;
     margin: 5px;
     margin-top: 15px;
     width: 100px;
-    height: 4vh;
+    height: 5vh;
+}
 
+.btnCenter button {
+    width: 150px;
+}
+
+.btnLogout {
+    font-size: 18px;
+    color: white;
+    background-color: var(--main-primary-color);
+    border: 1px solid var(--main-primary-color);
+    border-radius: 5px;
+    margin: 5px;
+    margin-top: 15px;
+    width: 100px;
+    height: 5vh;
+}
+
+.divLogout {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
 }

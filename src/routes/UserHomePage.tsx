@@ -39,6 +39,11 @@ function UserHomePage() {
         console.log(view);
         setView(view);
     }
+		
+		// add logic
+		function logout() {
+				console.log("logout")
+		}
     // console.log(loged_status);
     // console.log(usName);
 
@@ -49,7 +54,10 @@ function UserHomePage() {
             <div className="main">
                 {loged_status ? (
                     <div>
-                        <button>Logout</button>
+                        <div className="divLogout">
+                            <button onClick={logout} className="btnLogout">Logout</button>
+                        </div>
+
                         <h1>Hello again {usName} !</h1>
                         {<SideBar logic={changeView} />}
                         <MainView view={view} />

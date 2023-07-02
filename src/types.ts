@@ -1,4 +1,3 @@
-
 export interface IRow {
     seriesNumber: number;
     muscleGroup: string;
@@ -19,4 +18,3 @@ export interface IWorkout {
 
     addRows: Function;
 }
-
