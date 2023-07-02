@@ -2,6 +2,7 @@ import Table from "./Table";
 import useStore from "../Store";
 import { useEffect, useState } from "react";
 import paths from "../utils";
+import {IWorkout} from "../types";
 function NewWorkout() {
     // const storeArry = useStore((state: any) => state.temporaryWorkout);
     // const [table, setTable] = useState({});
@@ -47,18 +48,17 @@ function NewWorkout() {
         let dateAdded = new Date().toJSON();
         console.log(value.startingTemplate);
 
-        // combine with types
-        let workoutToSend = {
-            userName: userName,
-            dateAdded: dateAdded,
-            date: "",
-            timeStart: "",
-            timeEnd: "",
-            listOfRows: value.startingTemplate,
-        };
+        /* let workoutToSend: IWorkout = {
+				workoutOwner: ,
+				date,
+				timeStart,
+				timeEnd,
+        listOfRows: value.startingTemplate,
+				totalDay
+        }; */
 
 
-        console.log(workoutToSend);
+        console.log(value);
         //
 
         let respons = await fetch(paths.addWorkoutPath, {
