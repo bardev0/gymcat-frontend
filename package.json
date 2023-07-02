@@ -8,7 +8,6 @@
         "build": "tsc && vite build",
         "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
         "preview": "vite preview",
-				"openapi": "pnpm exec openapi-typescript api.yml --output ./src/api.ts"
     },
     "dependencies": {
         "@types/bcrypt": "^5.0.0",
@@ -16,7 +15,6 @@
         "bcryptjs": "^2.4.3",
         "localforage": "^1.10.0",
         "match-sorter": "^6.3.1",
-        "openapi-typescript": "^6.2.8",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "react-router-dom": "^6.14.0",
