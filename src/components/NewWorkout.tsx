@@ -46,16 +46,19 @@ function NewWorkout() {
 
     const handleClick = async () => {
         let dateAdded = new Date().toJSON();
-        console.log(value.startingTemplate);
+					
+				
 
-        /* let workoutToSend: IWorkout = {
-				workoutOwner: ,
-				date,
-				timeStart,
-				timeEnd,
+				// NOT WORKING
+        let workoutToSend: IWorkout = {
+				workoutOwner: value.userName,
+				// grab date value
+				date: new Date().toString(),
+				timeStart:new Date().toString(), 
+				timeEnd:new Date().toString(), 
         listOfRows: value.startingTemplate,
-				totalDay
-        }; */
+				totalDay: 0
+        }; 
 
 
         console.log(value);
