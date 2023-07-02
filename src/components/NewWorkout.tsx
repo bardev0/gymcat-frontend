@@ -1,6 +1,7 @@
 import Table from "./Table";
 import useStore from "../Store";
 import { useEffect, useState } from "react";
+import paths from "../utils";
 function NewWorkout() {
     // const storeArry = useStore((state: any) => state.temporaryWorkout);
     // const [table, setTable] = useState({});
@@ -56,10 +57,11 @@ function NewWorkout() {
             listOfRows: value.startingTemplate,
         };
 
+
         console.log(workoutToSend);
         //
 
-        let respons = await fetch("http://localhost:5001/addWorkout", {
+        let respons = await fetch(paths.addWorkoutPath, {
             headers: { "Content-Type": "application/json" },
             method: "POST",
             mode: "cors",

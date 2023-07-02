@@ -5,7 +5,8 @@ const env = dev
 const paths = {
 		loginPath: env + "login",
 		registerPath: env + "addUser",
-		validatePath: env + "validateUser"
+		validatePath: env + "validateUser",
+		addWorkoutPath: evn + "addWorkout"
 };
 
 export default paths;
