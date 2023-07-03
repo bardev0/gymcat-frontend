@@ -119,7 +119,7 @@ function Row(props: any) {
                 <input
                     className="inpSeria"
                     onChange={changeSerNum}
-                    placeholder="numer serii"
+                    placeholder="#"
                 ></input>
                 <input
                     className="inpGrupa"

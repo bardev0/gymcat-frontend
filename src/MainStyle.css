@@ -94,34 +94,6 @@ aside {
     /* background-color: lightgrey; */
 }
 
-.dataTime {
-    height: 4vh;
-    display: flex;
-    /* background-color: blueviolet; */
-}
-
-.dataTime div {
-    /* background-color: antiquewhite; */
-    display: flex;
-    width: 8vw;
-    margin: 0 10px 0 0;
-}
-
-.dataTime p {
-    /* line-height: 28px; */
-    vertical-align: middle;
-    /* background-color: red; */
-    margin-right: 20px;
-    margin: 10px 10px 10px 0;
-}
-
-.dataTime input {
-    /* background-color: red; */
-    border: 0;
-    border-radius: 5px;
-    margin: 10px 0 10px 0;
-}
-
 .inpSeria {
     width: 2vw;
 }
@@ -150,8 +122,10 @@ aside {
 }
 
 .rowBlock {
-    display: flex;
+    padding: 10px 0px 10px -2px;
+    display: block;
     justify-content: center;
+
     /* background-color: bisque; */
 }
 .row {
@@ -159,13 +133,14 @@ aside {
 }
 
 .row input {
+    vertical-align: middle;
     height: 2vh;
-    margin: 0.2vh 0.1vw 0.2vh 0.1vw;
+    margin: 0.2vh 0.1vw 0.2vh 0vw;
 }
 
 .rowTotal {
     margin-left: 10px;
-    font-size: 20px;
+    font-size: 16px;
     vertical-align: middle;
     display: inline-block;
     /* background-color: red; */
@@ -203,4 +178,57 @@ aside {
     display: flex;
     flex-direction: row;
     justify-content: right;
+}
+
+.rowBtn {
+    font-size: 10px;
+    color: white;
+    background-color: var(--main-primary-color);
+    border: 1px solid var(--main-primary-color);
+    border-radius: 5px;
+    /* margin: 5px; */
+    /* margin-top: 15px; */
+    width: 60px;
+    height: 2vh;
+    margin: 0 10px 2px 0;
+}
+
+.rowBtnContainer {
+    /* background-color: blue; */
+}
+
+.dataSelector {
+    /* background-color: red; */
+    margin: 10px;
+    vertical-align: middle;
+    margin: 20px;
+}
+
+.dataTime {
+    height: 4vh;
+    margin: 0 10px 0 0;
+    display: flex;
+    /* background-color: blueviolet; */
+}
+
+.dataTime div {
+    /* background-color: antiquewhite; */
+    display: flex;
+    width: 8vw;
+    margin: 0 10px 0 0;
+}
+
+.dataTime p {
+    /* line-height: 28px; */
+    vertical-align: middle;
+    /* background-color: red; */
+    margin-right: 20px;
+    margin: 10px 10px 10px 0;
+}
+
+.dataTime input {
+    /* background-color: red; */
+    border: 0;
+    border-radius: 5px;
+    margin: 10px 0 10px 0;
 }

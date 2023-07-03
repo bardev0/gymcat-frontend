@@ -4,6 +4,8 @@
 
 # to-do's
 
+-   reload workout table when entering existing workouts tab
+
 -   add mobile CSS responsive layout
 -   add working logout button
 -   move server paths to env

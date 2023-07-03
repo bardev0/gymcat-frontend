@@ -9,6 +9,9 @@ function NewWorkout() {
 
     const [value, setValue] = useState(useStore.getState().startingTemplate);
     const userName = useStore((state: any) => state.userName);
+    const [startDate, setStartDate] = useState("");
+    const [startTime, setStartTime] = useState("");
+    const [endTime, setEndTime] = useState("");
 
     // redo for learning
     useEffect(() => {
@@ -46,19 +49,21 @@ function NewWorkout() {
 
     const handleClick = async () => {
         let dateAdded = new Date().toJSON();
+        console.log(startDate);
 
         // NOT WORKING
         let workoutToSend: IWorkout = {
             workoutOwner: value.userName,
             // grab date value
-            date: new Date().toString(),
-            timeStart: new Date().toString(),
-            timeEnd: new Date().toString(),
+            date: startDate,
+            timeStart: startTime,
+            timeEnd: endTime,
             listOfRows: value.startingTemplate,
             totalDay: 0,
         };
 
         console.log(value);
+        console.log(workoutToSend);
         //
 
         let respons = await fetch(paths.addWorkoutPath, {
@@ -71,7 +76,7 @@ function NewWorkout() {
 
     return (
         <>
-            <Table></Table>
+            <Table logic={[setStartDate, setStartTime, setEndTime]}></Table>
             <div className="btnCenter">
                 <button className="mainBtn" onClick={handleClick}>
                     Save Workout
